@@ -50,6 +50,12 @@ RSpec.describe AddressBook do
       expect(book_size).to eq(5)
     end
 
+    it "imports from entries2" do
+      book.import_from_csv("entries_2.csv")
+      book_size = book.entries.size
+      expect(book_size).to eq 3
+    end
+
     it "imports the 1st entry" do
       book.import_from_csv("entries.csv")
       entry_one = book.entries[0]
